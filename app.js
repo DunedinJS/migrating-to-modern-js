@@ -1,9 +1,6 @@
-/*
-NOTE: this script depends on global variables
-      Backbone
-      $ (jQuery)
-      _ (Underscore)
-*/
+import $ from 'jquery';
+import _ from 'underscore';
+import Backbone from 'backbone';
 
 // Load the application when the DOM is ready
 $(function() {
