@@ -23,12 +23,11 @@ It can help to clearly separate code for data and logic from user interface rela
 Apps built this way were state of the art from late 2010 to around 2013.
 Backbone.js is still in wide use today but mainly for long-running projects, not new projects.
 
-
-_Other branches coming soon_
-
 #### `01-packages`
 
 * Adds NPM for package management
+
+_Other branches coming soon_
 
 #### `02-modules`
 
