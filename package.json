@@ -4,6 +4,8 @@
   "description": "An example stopwatch application",
   "main": "app.js",
   "scripts": {
+    "start": "webpack-dev-server --progress",
+    "build": "webpack --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
