@@ -1,0 +1,29 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#app {
+  width: 300px;
+  margin: 0 auto;
+}
+
+#app .display {
+  font-size: 30px;
+  margin: 60px 0 20px;
+}
+
+#app button {
+  font-size: 18px;
+  color: #fff;
+  background: #999;
+  border: none;
+}
+
+#app button:hover {
+  background: #666;
+  cursor: pointer;
+}
+
+#app button:focus {
+  outline: none;
+}
