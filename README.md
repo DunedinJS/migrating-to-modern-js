@@ -27,9 +27,11 @@ Backbone.js is still in wide use today but mainly for long-running projects, not
 
 * Adds NPM for package management
 
-_Other branches coming soon_
-
 #### `02-modules`
 
-* Adds Webpack and Babel to compile and bundle modular source code into browser-ready script
-* Separates source code into ES6 modules
+* Adds Webpack and Babel to compile and bundle modular source code into a single browser-ready script
+* Import third-party libraries as modules
+
+#### `03-modules`
+
+* Separate all source code into ES6 modules
