@@ -1,0 +1,24 @@
+{
+  "name": "migrating-to-modern-js",
+  "version": "1.0.0",
+  "description": "An example stopwatch application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DunedinJS/migrating-to-modern-js.git"
+  },
+  "author": "matt@mnorrish.co.nz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DunedinJS/migrating-to-modern-js/issues"
+  },
+  "homepage": "https://github.com/DunedinJS/migrating-to-modern-js#readme",
+  "dependencies": {
+    "backbone": "1.3.3",
+    "jquery": "2.2.4",
+    "underscore": "1.8.3"
+  }
+}
