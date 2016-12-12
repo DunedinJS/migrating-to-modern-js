@@ -1,25 +1,18 @@
-import $ from 'jquery';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import AppView from './app/View';
+import App from './app';
 import AppModel from './app/Model';
 
 import './styles.css';
 
-// Load the application when the DOM is ready
-$(() => {
-
-  // create a model instance with the current timestamp
-  const model = new AppModel({
-    timestamp: Date.now()
-  });
-
-  // create an AppView instance
-  const appView = new AppView({
-    el: $('#app'), // the element to attach the app to
-    model // the model to use
-  });
-
-  // render the app
-  appView.render();
-
+// create a model instance with the current timestamp
+const model = new AppModel({
+  timestamp: Date.now()
 });
+
+// render the App component
+ReactDOM.render(
+  <App model={model} />, // provide the model as a property
+  document.getElementById('app') // the element to attach the app to
+);
