@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
-  entry: './source/index.js',
+  entry: './source/index.jsx',
 
   output: {
     path: './dist', // the directory to output bundled files to
@@ -32,7 +32,7 @@ module.exports = {
       },
     ],
   },
-  
+
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },
