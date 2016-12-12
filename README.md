@@ -43,4 +43,14 @@ Our starting application. Built on Backbone.js and state of the art from late 20
 
 * Convert Backbone's custom class extension to ES6 classes
 
-#### `09-react` coming soon
+#### [`09-react`](https://github.com/DunedinJS/migrating-to-modern-js/tree/09-react)
+
+* Convert child views from Backbone Views to React Components
+
+#### [`10-react`](https://github.com/DunedinJS/migrating-to-modern-js/tree/10-react)
+
+* Convert main view from a Backbone View to a React Component
+
+#### `11-react` coming soon
+
+* Convert state management from Backbone Model to React state
