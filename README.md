@@ -48,3 +48,7 @@ Backbone.js is still in wide use today but mainly for long-running projects, not
 #### [`06-unit-tests`](https://github.com/DunedinJS/migrating-to-modern-js/tree/06-unit-tests)
 
 * Configure Jest to test application logic
+
+#### [`07-syntax`](https://github.com/DunedinJS/migrating-to-modern-js/tree/07-syntax)
+
+* Convert source code to modern syntax
