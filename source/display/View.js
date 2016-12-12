@@ -23,7 +23,7 @@ export default Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template({
-      seconds: this.model.getSeconds()
+      seconds: this.model.getSeconds(this.model.get('pauseTimestamp') || Date.now())
     }));
   }
 

@@ -26,15 +26,15 @@ export default Backbone.View.extend({
   },
 
   onPause: function() {
-    this.model.pause();
+    this.model.pause(Date.now());
   },
 
   onContinue: function() {
-    this.model.continue();
+    this.model.continue(Date.now());
   },
 
   onReset: function() {
-    this.model.reset();
+    this.model.reset(Date.now());
   }
 
 });

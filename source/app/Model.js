@@ -3,10 +3,8 @@ import Backbone from 'backbone';
 // A model which stores and manages application data
 export default Backbone.Model.extend({
 
-  getSeconds: function() {
-    var pauseTimestamp = this.get('pauseTimestamp');
-    var offset = pauseTimestamp || Date.now();
-    var timestamp = offset - this.get('timestamp');
+  getSeconds: function(untilTimestamp) {
+    var timestamp = untilTimestamp - this.get('timestamp');
 
     return Math.floor(timestamp / 1000);
   },
@@ -15,25 +13,25 @@ export default Backbone.Model.extend({
     return !!this.get('pauseTimestamp');
   },
 
-  pause: function() {
+  pause: function(timestamp) {
     this.set({
-      pauseTimestamp: Date.now()
+      pauseTimestamp: timestamp
     });
   },
 
-  continue: function() {
+  continue: function(timestamp) {
     var pauseTimestamp = this.get('pauseTimestamp');
     var offset = pauseTimestamp - this.get('timestamp');
 
     this.set({
-      timestamp: Date.now() - offset,
+      timestamp: timestamp - offset,
       pauseTimestamp: null
     });
   },
 
-  reset: function() {
+  reset: function(timestamp) {
     this.set({
-      timestamp: Date.now(),
+      timestamp: timestamp,
       pauseTimestamp: null
     });
   }
