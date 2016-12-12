@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
@@ -7,8 +8,7 @@ module.exports = {
 
   output: {
     path: './dist', // the directory to output bundled files to
-    publicPath: 'dist', // the web path prefix for bundled files
-    filename: 'bundle.js',
+    filename: 'bundle-[hash].js',
   },
 
   module: {
@@ -28,6 +28,10 @@ module.exports = {
       },
     ],
   },
+
+  plugins: [
+    new HtmlWebpackPlugin({ template: './source/index.html' }),
+  ],
 
   devtool: 'source-map',
 
