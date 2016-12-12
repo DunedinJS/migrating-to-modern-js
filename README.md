@@ -25,11 +25,12 @@ Backbone.js is still in wide use today but mainly for long-running projects, not
 
 #### [`01-packages`](https://github.com/DunedinJS/migrating-to-modern-js/tree/01-packages)
 
-* Adds NPM for package management
+* Add NPM for package management
+* Remove third-party libraries from repository
 
 #### [`02-modules`](https://github.com/DunedinJS/migrating-to-modern-js/tree/02-modules)
 
-* Adds Webpack and Babel to compile and bundle modular source code into a single browser-ready script
+* Add Webpack and Babel to compile and bundle modular source code into a single browser-ready script
 * Import third-party libraries as modules
 
 #### [`03-modules`](https://github.com/DunedinJS/migrating-to-modern-js/tree/03-modules)
@@ -52,3 +53,5 @@ Backbone.js is still in wide use today but mainly for long-running projects, not
 #### [`07-syntax`](https://github.com/DunedinJS/migrating-to-modern-js/tree/07-syntax)
 
 * Convert source code to modern syntax
+
+#### `08-react` coming soon
