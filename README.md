@@ -4,7 +4,7 @@ A simple stopwatch application which serves as an example of how to migrate an o
 
 ### Each stage is stored in a different branch
 
-#### [`00-original`](DunedinJS/migrating-to-modern-js/tree/00-original)
+#### [`00-original`](https://github.com/DunedinJS/migrating-to-modern-js/tree/00-original)
 
 Simple application built on [Backbone.js](http://backbonejs.org/), [Underscore.js](http://underscorejs.org/), and [jQuery](https://jquery.com/).
 
@@ -23,24 +23,24 @@ It can help to clearly separate code for data and logic from user interface rela
 Apps built this way were state of the art from late 2010 to around 2013.
 Backbone.js is still in wide use today but mainly for long-running projects, not new projects.
 
-#### [`01-packages`](DunedinJS/migrating-to-modern-js/tree/01-packages)
+#### [`01-packages`](https://github.com/DunedinJS/migrating-to-modern-js/tree/01-packages)
 
 * Adds NPM for package management
 
-#### [`02-modules`](DunedinJS/migrating-to-modern-js/tree/02-modules)
+#### [`02-modules`](https://github.com/DunedinJS/migrating-to-modern-js/tree/02-modules)
 
 * Adds Webpack and Babel to compile and bundle modular source code into a single browser-ready script
 * Import third-party libraries as modules
 
-#### [`03-modules`](DunedinJS/migrating-to-modern-js/tree/03-modules)
+#### [`03-modules`](https://github.com/DunedinJS/migrating-to-modern-js/tree/03-modules)
 
 * Separate all source code into ES6 modules
 
-#### [`04-sourcemaps`](DunedinJS/migrating-to-modern-js/tree/04-sourcemaps)
+#### [`04-sourcemaps`](https://github.com/DunedinJS/migrating-to-modern-js/tree/04-sourcemaps)
 
 * Configure sourcemaps
 
-#### [`05-versioning`](DunedinJS/migrating-to-modern-js/tree/05-versioning)
+#### [`05-versioning`](https://github.com/DunedinJS/migrating-to-modern-js/tree/05-versioning)
 
 * Configure Webpack to output bundle with a version hash suffix in its filename
 * Configure Webpack to inject script tag into HTML file
