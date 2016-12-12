@@ -14,11 +14,11 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /.js$/,
+        test: /.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015'],
+          presets: ['es2015', 'react'],
         },
       },
       {
@@ -31,6 +31,10 @@ module.exports = {
         loader: 'style-loader?sourceMap!css-loader?sourceMap'
       },
     ],
+  },
+  
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
   },
 
   plugins: [
