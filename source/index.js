@@ -9,14 +9,14 @@ import './styles.css';
 $(() => {
 
   // create a model instance with the current timestamp
-  const appModel = new AppModel({
+  const model = new AppModel({
     timestamp: Date.now()
   });
 
   // create an AppView instance
   const appView = new AppView({
     el: $('#app'), // the element to attach the app to
-    model: appModel // the model to use
+    model // the model to use
   });
 
   // render the app
