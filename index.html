@@ -15,24 +15,5 @@
   <!-- Scripts -->
   <script src="dist/bundle.js"></script>
 
-  <!-- Templates -->
-  <script type="text/template" id="template-app">
-    <div class="display"></div>
-    <div class="controls"></div>
-  </script>
-
-  <script type="text/template" id="template-display">
-    <%= seconds %> seconds
-  </script>
-
-  <script type="text/template" id="template-controls">
-    <% if (isPaused) { %>
-      <button class="continue">Continue</button>
-    <% } else { %>
-      <button class="pause">Pause</button>
-    <% } %>
-    <button class="reset">Reset</button>
-  </script>
-
 </body>
 </html>
