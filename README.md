@@ -39,4 +39,8 @@ Our starting application. Built on Backbone.js and state of the art from late 20
 
 * Convert source code to modern syntax
 
-#### `08-react` coming soon
+#### [`08-syntax`](https://github.com/DunedinJS/migrating-to-modern-js/tree/08-syntax)
+
+* Convert Backbone's custom class extension to ES6 classes
+
+#### `09-react` coming soon
