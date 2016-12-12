@@ -2,8 +2,8 @@ import Backbone from 'backbone';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Display from '../display/View';
-import Controls from '../controls/View';
+import Display from '../display';
+import Controls from '../controls';
 
 // The main view for the application
 export default class AppView extends Backbone.View {
