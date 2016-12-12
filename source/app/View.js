@@ -1,32 +1,22 @@
-import _ from 'underscore';
 import Backbone from 'backbone';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import template from './template.html';
-import DisplayView from '../display/View';
-import ControlsView from '../controls/View';
+import Display from '../display/View';
+import Controls from '../controls/View';
 
 // The main view for the application
 export default class AppView extends Backbone.View {
 
   render() {
-    // render the view template
-    this.$el.html(this.template());
-
-    // create instances for child-views
-    this.displayView = new DisplayView({
-      el: this.$('.display'), // the element to attach the child-view to
-      model: this.model // provide the same model to the child-view
-    });
-    this.controlsView = new ControlsView({
-      el: this.$('.controls'),
-      model: this.model
-    });
-
-    // render child-views
-    this.displayView.render();
-    this.controlsView.render();
+    // render React components for child-views
+    ReactDOM.render(
+      <div>
+        <Display model={this.model} />
+        <Controls model={this.model} />
+      </div>,
+      this.el
+    );
   }
 
 };
-
-AppView.prototype.template = _.template(template);
