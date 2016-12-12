@@ -3,6 +3,8 @@ import $ from 'jquery';
 import AppView from './app/View';
 import AppModel from './app/Model';
 
+import './styles.css';
+
 // Load the application when the DOM is ready
 $(function() {
 
