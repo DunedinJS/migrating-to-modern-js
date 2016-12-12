@@ -1,3 +1,5 @@
+_[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
+
 # 00-original
 
 Simple application built on [Backbone.js](http://backbonejs.org/).
