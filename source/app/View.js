@@ -6,9 +6,7 @@ import DisplayView from '../display/View';
 import ControlsView from '../controls/View';
 
 // The main view for the application
-export default Backbone.View.extend({
-
-  template: _.template(template),
+export default class AppView extends Backbone.View {
 
   render() {
     // render the view template
@@ -29,4 +27,6 @@ export default Backbone.View.extend({
     this.controlsView.render();
   }
 
-});
+};
+
+AppView.prototype.template = _.template(template);
