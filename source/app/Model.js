@@ -3,25 +3,25 @@ import Backbone from 'backbone';
 // A model which stores and manages application data
 export default Backbone.Model.extend({
 
-  getSeconds: function(untilTimestamp) {
-    var timestamp = untilTimestamp - this.get('timestamp');
+  getSeconds(untilTimestamp) {
+    const timestamp = untilTimestamp - this.get('timestamp');
 
     return Math.floor(timestamp / 1000);
   },
 
-  isPaused: function() {
+  isPaused() {
     return !!this.get('pauseTimestamp');
   },
 
-  pause: function(timestamp) {
+  pause(timestamp) {
     this.set({
       pauseTimestamp: timestamp
     });
   },
 
-  continue: function(timestamp) {
-    var pauseTimestamp = this.get('pauseTimestamp');
-    var offset = pauseTimestamp - this.get('timestamp');
+  continue(timestamp) {
+    const pauseTimestamp = this.get('pauseTimestamp');
+    const offset = pauseTimestamp - this.get('timestamp');
 
     this.set({
       timestamp: timestamp - offset,
@@ -29,7 +29,7 @@ export default Backbone.Model.extend({
     });
   },
 
-  reset: function(timestamp) {
+  reset(timestamp) {
     this.set({
       timestamp: timestamp,
       pauseTimestamp: null

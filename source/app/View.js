@@ -10,7 +10,7 @@ export default Backbone.View.extend({
 
   template: _.template(template),
 
-  render: function() {
+  render() {
     // render the view template
     this.$el.html(this.template());
 

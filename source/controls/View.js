@@ -14,26 +14,26 @@ export default Backbone.View.extend({
     'click .reset': 'onReset'
   },
 
-  initialize: function() {
+  initialize() {
     // re-render on model change
     this.listenTo(this.model, 'change', this.render);
   },
 
-  render: function() {
+  render() {
     this.$el.html(this.template({
       isPaused: this.model.isPaused()
     }));
   },
 
-  onPause: function() {
+  onPause() {
     this.model.pause(Date.now());
   },
 
-  onContinue: function() {
+  onContinue() {
     this.model.continue(Date.now());
   },
 
-  onReset: function() {
+  onReset() {
     this.model.reset(Date.now());
   }
 

@@ -6,15 +6,15 @@ import AppModel from './app/Model';
 import './styles.css';
 
 // Load the application when the DOM is ready
-$(function() {
+$(() => {
 
   // create a model instance with the current timestamp
-  var appModel = new AppModel({
+  const appModel = new AppModel({
     timestamp: Date.now()
   });
 
   // create an AppView instance
-  var appView = new AppView({
+  const appView = new AppView({
     el: $('#app'), // the element to attach the app to
     model: appModel // the model to use
   });

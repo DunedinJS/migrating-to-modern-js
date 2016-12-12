@@ -6,14 +6,11 @@ export default Backbone.View.extend({
 
   template: _.template('<%= seconds %> seconds'),
 
-  initialize: function() {
-    // save reference to the correct this context
-    var self = this;
-
+  initialize() {
     // re-render every second (1000 milliseconds) if not paused
-    window.setInterval(function() {
-      if (!self.model.isPaused()) {
-        self.render();
+    window.setInterval(() => {
+      if (!this.model.isPaused()) {
+        this.render();
       }
     }, 1000);
 
@@ -21,7 +18,7 @@ export default Backbone.View.extend({
     this.listenTo(this.model, 'change', this.render);
   },
 
-  render: function() {
+  render() {
     this.$el.html(this.template({
       seconds: this.model.getSeconds(this.model.get('pauseTimestamp') || Date.now())
     }));
