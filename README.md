@@ -44,3 +44,7 @@ Backbone.js is still in wide use today but mainly for long-running projects, not
 
 * Configure Webpack to output bundle with a version hash suffix in its filename
 * Configure Webpack to inject script tag into HTML file
+
+#### [`06-unit-tests`](https://github.com/DunedinJS/migrating-to-modern-js/tree/06-unit-tests)
+
+* Configure Jest to test application logic
