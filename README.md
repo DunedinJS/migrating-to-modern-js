@@ -4,13 +4,33 @@ _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
 
 Simple application built on [Backbone.js](http://backbonejs.org/).
 
-* No package management -- third-party libraries checked in to repository
-* No tests
-* No module system
-* No source code compilation -- developer writes code directly for the browser
-* Each JavaScript file (including third-party libraries) is loaded with a separate HTML `<script>` tag
-* Application source stored in a single file
+[`app.js`](./app.js) contains all JavaScript for the application except
+for third-party libraries.
+
+* No package management &mdash; third-party libraries checked in to the
+  repository in the [`vendor`](./vendor/) directory.
+
+* No module system &mdash; all application code in [`app.js`](./app.js)
+
+* No source code compilation &mdash; developer writes code directly for the browser
+
+* No tests &mdash; in fact very difficult to test
+
+[`index.html`](./index.html) is an integral part of the application source code
+because it explicitly defines how all JavaScript files are loaded.
+
+* Each JavaScript file (including third-party libraries) is loaded with a
+separate HTML `<script>` tag
+
+  This means that the application depends on the third-party libraries to expose themselves
+  in the global scope.
+  These can be troublesome because the order in which libraries are loaded is important.
+  For example, Backbone.js depends on Underscore.js being loaded first.
+
 * Application templates stored in HTML `<script type="text/template">` tags
+
+  These are not visible to users but provide a convenient place for the application
+  to load templates from without having to request them from the server.
 
 ## To run
 
