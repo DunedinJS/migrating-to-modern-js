@@ -17,6 +17,9 @@ body {
   color: #fff;
   background: #999;
   border: none;
+  display: block;
+  float: left;
+  margin-right: 10px;
 }
 
 #app button:hover {
