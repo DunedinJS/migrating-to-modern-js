@@ -40,12 +40,13 @@ separate HTML `<script>` tag
 
 ## Backbone.js
 
-A lightweight library which helps to structure JavaScript applications with a type of
-Model-View-Controller pattern.
+[Backbone.js](http://backbonejs.org/) is a lightweight library which helps to
+structure JavaScript applications with a type of Model-View-Controller pattern.
 It can help to clearly separate code for data and logic from user interface related code.
 
 Backbone.js relies on two other third-party libraries --
 [Underscore.js](http://underscorejs.org/), and [jQuery](https://jquery.com/).
 
 Apps built this way were state of the art from late 2010 to around 2013.
-Backbone.js is still in wide use today but mainly for long-running projects, not new projects.
+Backbone.js is still in wide use today but mainly for long-running projects,
+not new projects.
