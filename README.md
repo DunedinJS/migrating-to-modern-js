@@ -51,6 +51,7 @@ Our starting application. Built on Backbone.js and state of the art from late 20
 
 * Convert main view from a Backbone View to a React Component
 
-#### `11-react` coming soon
+#### [`11-react`](https://github.com/DunedinJS/migrating-to-modern-js/tree/11-react)
 
 * Convert state management from Backbone Model to React state
+* Revise tests to cover new logic implementation
