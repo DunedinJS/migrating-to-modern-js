@@ -2,9 +2,16 @@ _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
 
 # 02-modules
 
-* Add Webpack and Babel to compile and bundle modular source code into a single browser-ready script
+* Add Webpack and Babel to compile and bundle modular source code into a
+single browser-ready script
+
+  Only a single `<script>` tag to load the application bundle is in
+  [`index.html`](./index.html) now.
 
 * Import third-party libraries as modules
+
+  The application no longer relies on global variables because Webpack makes
+  sure that all module dependencies are satisfied.
 
 ## To run
 
