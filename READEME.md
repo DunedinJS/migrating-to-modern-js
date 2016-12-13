@@ -1,15 +1,15 @@
 _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
 
-# 02-modules
+# 03-modules
 
-* Add Webpack and Babel to compile and bundle modular source code into a single browser-ready script
+* Separate all source code into ES6 modules
 
-* Import third-party libraries as modules
+  The single `app.js` is now split into multiple files within the `source` directory. These use ES6 module import and export.
 
 ## To run
 
 1. Clone this repository to your workstation
-1. Checkout the `02-modules` branch
+1. Checkout the `03-modules` branch
 1. Run `npm i` in the project directory &mdash; this installs dependencies
 
 #### Development server
@@ -26,19 +26,16 @@ This compiles and bundles the JavaScript source files into `dist/bundle.js`
 1. Run `npm run build`
 1. Open the `index.html` file directly in a web browser
 
-## Webpack
+## Template files as modules
 
-[Webpack](https://webpack.github.io/docs/) is a module bundler for web projects.
-It can bundle multiple source files of different types including JavaScript, HTML,
-images, and CSS among others and bundle them into browser-ready files.
+_For example see [`source/controls/template.html`](./source/controls/template.html)
+and [`source/controls/View.js`](./source/controls/View.js)._
 
-Webpack is highly configurable via vast ecosystem of loaders and plugins.
+Webpack allows non-JavaScript files to be loaded as modules.
+This is very convenient because it allows us to separate templates into their
+own files and load them into the Backbone views where needed.
 
-## Babel
-
-[Babel](https://babeljs.io/) is a JavaScript compiler which is most often used to
-transpile modern or future JavaScript syntax into older versions.
-For example from ES6/ES2015 source code into ES5 code which has full browser support.
-
-_In this branch we only use Babel to transpile ES6 module import syntax.
-For an example of this see [`app.js`](./app.js)._
+[`raw-loader`](https://github.com/webpack/raw-loader) is used to load the
+contents of text files as strings in JavaScript.
+This is done at compile-time so the templates are included as strings in the
+application bundle.
