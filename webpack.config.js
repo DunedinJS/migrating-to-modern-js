@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader?sourceMap!css-loader?sourceMap'
+        loader: 'style-loader?sourceMap!css-loader?sourceMap',
       },
     ],
   },

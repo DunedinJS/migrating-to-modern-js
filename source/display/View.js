@@ -8,7 +8,7 @@ export default Backbone.View.extend({
 
   initialize() {
     // re-render every second (1000 milliseconds) if not paused
-    window.setInterval(() => {
+    setInterval(() => {
       if (!this.model.isPaused()) {
         this.render();
       }
@@ -20,8 +20,8 @@ export default Backbone.View.extend({
 
   render() {
     this.$el.html(this.template({
-      seconds: this.model.getSeconds(this.model.get('pauseTimestamp') || Date.now())
+      seconds: this.model.getSeconds(this.model.get('pauseTimestamp') || Date.now()),
     }));
-  }
+  },
 
 });

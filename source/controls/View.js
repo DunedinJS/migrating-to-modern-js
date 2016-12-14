@@ -11,7 +11,7 @@ export default Backbone.View.extend({
   events: {
     'click .pause': 'onPause',
     'click .continue': 'onContinue',
-    'click .reset': 'onReset'
+    'click .reset': 'onReset',
   },
 
   initialize() {
@@ -21,7 +21,7 @@ export default Backbone.View.extend({
 
   render() {
     this.$el.html(this.template({
-      isPaused: this.model.isPaused()
+      isPaused: this.model.isPaused(),
     }));
   },
 
@@ -35,6 +35,6 @@ export default Backbone.View.extend({
 
   onReset() {
     this.model.reset(Date.now());
-  }
+  },
 
 });

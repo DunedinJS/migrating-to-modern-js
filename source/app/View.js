@@ -17,16 +17,16 @@ export default Backbone.View.extend({
     // create instances for child-views
     this.displayView = new DisplayView({
       el: this.$('.display'), // the element to attach the child-view to
-      model: this.model // provide the same model to the child-view
+      model: this.model, // provide the same model to the child-view
     });
     this.controlsView = new ControlsView({
       el: this.$('.controls'),
-      model: this.model
+      model: this.model,
     });
 
     // render child-views
     this.displayView.render();
     this.controlsView.render();
-  }
+  },
 
 });
