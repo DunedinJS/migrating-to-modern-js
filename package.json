@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --progress --inline",
     "build": "rm -rf ./dist; webpack --progress",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
