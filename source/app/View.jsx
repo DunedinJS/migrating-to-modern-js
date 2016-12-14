@@ -15,8 +15,8 @@ export default class AppView extends Backbone.View {
         <Display model={this.model} />
         <Controls model={this.model} />
       </div>,
-      this.el
+      this.el,
     );
   }
 
-};
+}

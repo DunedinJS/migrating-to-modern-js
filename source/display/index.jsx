@@ -1,4 +1,5 @@
 import React from 'react';
+import Model from '../app/Model';
 
 // A view which displays the elapsed time in seconds
 export default class Display extends React.Component {
@@ -7,7 +8,7 @@ export default class Display extends React.Component {
     super(props);
 
     this.state = {
-        seconds: 0
+      seconds: 0,
     };
 
     // explicitly bind method to this component instance
@@ -18,7 +19,7 @@ export default class Display extends React.Component {
     // tick every second (1000 milliseconds) if not paused
     this.timerID = setInterval(
       this.tick,
-      1000
+      1000,
     );
 
     // listen to Backbone Model event
@@ -34,11 +35,11 @@ export default class Display extends React.Component {
 
   tick() {
     if (!this.props.model.isPaused()) {
-        const seconds = this.props.model.getSeconds(
-            this.props.model.get('pauseTimestamp') || Date.now()
-        );
+      const seconds = this.props.model.getSeconds(
+        this.props.model.get('pauseTimestamp') || Date.now(),
+      );
 
-        this.setState({ seconds });
+      this.setState({ seconds });
     }
   }
 
@@ -46,4 +47,8 @@ export default class Display extends React.Component {
     return <div className="display">{this.state.seconds} seconds</div>;
   }
 
+}
+
+Display.propTypes = {
+  model: React.PropTypes.instanceOf(Model),
 };
