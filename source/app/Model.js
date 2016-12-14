@@ -15,7 +15,7 @@ export default class AppModel extends Backbone.Model {
 
   pause(timestamp) {
     this.set({
-      pauseTimestamp: timestamp
+      pauseTimestamp: timestamp,
     });
   }
 
@@ -25,15 +25,15 @@ export default class AppModel extends Backbone.Model {
 
     this.set({
       timestamp: timestamp - offset,
-      pauseTimestamp: null
+      pauseTimestamp: null,
     });
   }
 
   reset(timestamp) {
     this.set({
-      timestamp: timestamp,
-      pauseTimestamp: null
+      timestamp,
+      pauseTimestamp: null,
     });
   }
 
-};
+}

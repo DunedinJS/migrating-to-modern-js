@@ -1,18 +1,18 @@
 import React from 'react';
-
+import Model from '../app/Model';
 import Display from '../display';
 import Controls from '../controls';
 
 // The main view for the application
-export default class App extends React.Component {
+export default function App(props) {
+  return (
+    <div>
+      <Display model={props.model} />
+      <Controls model={props.model} />
+    </div>
+  );
+}
 
-  render() {
-    return (
-      <div>
-        <Display model={this.props.model} />
-        <Controls model={this.props.model} />
-      </div>
-    );
-  }
-
+App.propTypes = {
+  model: React.PropTypes.instanceOf(Model),
 };
