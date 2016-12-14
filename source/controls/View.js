@@ -13,7 +13,7 @@ export default class ControlsView extends Backbone.View {
 
   render() {
     this.$el.html(this.template({
-      isPaused: this.model.isPaused()
+      isPaused: this.model.isPaused(),
     }));
   }
 
@@ -29,12 +29,12 @@ export default class ControlsView extends Backbone.View {
     this.model.reset(Date.now());
   }
 
-};
+}
 
 ControlsView.prototype.template = _.template(template);
 
 ControlsView.prototype.events = {
   'click .pause': 'onPause',
   'click .continue': 'onContinue',
-  'click .reset': 'onReset'
+  'click .reset': 'onReset',
 };

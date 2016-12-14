@@ -15,11 +15,11 @@ export default class AppView extends Backbone.View {
     // create instances for child-views
     this.displayView = new DisplayView({
       el: this.$('.display'), // the element to attach the child-view to
-      model: this.model // provide the same model to the child-view
+      model: this.model, // provide the same model to the child-view
     });
     this.controlsView = new ControlsView({
       el: this.$('.controls'),
-      model: this.model
+      model: this.model,
     });
 
     // render child-views
@@ -27,6 +27,6 @@ export default class AppView extends Backbone.View {
     this.controlsView.render();
   }
 
-};
+}
 
 AppView.prototype.template = _.template(template);
