@@ -21,7 +21,7 @@ _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
 
 ## NPM
 
-[NPM](https://docs.npmjs.com/) is a package repository and also a command-line tool
+[NPM](https://docs.npmjs.com/) is a package registry and also a command-line tool
 for managing packages from the repository.
 NPM is by far the most popular way to manage dependencies in JavaScript projects.
 The NPM command-line tool is included with Node.js.
