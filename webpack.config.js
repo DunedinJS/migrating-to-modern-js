@@ -10,6 +10,13 @@ module.exports = {
   },
 
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+      },
+    ],
     loaders: [
       {
         test: /.js$/,
@@ -36,5 +43,9 @@ module.exports = {
   ],
 
   devtool: 'source-map',
+
+  eslint: {
+    quiet: true,
+  },
 
 };
