@@ -17,10 +17,15 @@ export default class Display extends React.Component {
   render() {
     const seconds = secondsDifference(
       this.props.timestamp,
-      this.props.pauseTimestamp || Date.now()
+      this.props.pauseTimestamp || Date.now(),
     );
 
     return <div className="display">{ seconds } seconds</div>;
   }
 
+}
+
+Display.propTypes = {
+  timestamp: React.PropTypes.number,
+  pauseTimestamp: React.PropTypes.number,
 };

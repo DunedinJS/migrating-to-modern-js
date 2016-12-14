@@ -1,6 +1,4 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
@@ -12,6 +10,13 @@ module.exports = {
   },
 
   module: {
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+      },
+    ],
     loaders: [
       {
         test: /.jsx?$/,
@@ -28,7 +33,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader?sourceMap!css-loader?sourceMap'
+        loader: 'style-loader?sourceMap!css-loader?sourceMap',
       },
     ],
   },
@@ -42,5 +47,9 @@ module.exports = {
   ],
 
   devtool: 'source-map',
+
+  eslint: {
+    quiet: true,
+  },
 
 };

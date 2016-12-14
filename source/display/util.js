@@ -1,3 +1,5 @@
+/* eslint-disable import/prefer-default-export */
+
 export function secondsDifference(fromTimestamp, untilTimestamp) {
   const diffence = untilTimestamp - fromTimestamp;
 

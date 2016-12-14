@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Display from '../display';
 import Controls from '../controls';
 
@@ -10,8 +9,35 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      timestamp: Date.now()
+      timestamp: Date.now(),
     };
+  }
+
+  onPause(timestamp) {
+    this.setState({
+      pauseTimestamp: timestamp,
+    });
+  }
+
+  onContinue(timestamp) {
+    this.setState((prevState) => {
+      const offset = prevState.pauseTimestamp - prevState.timestamp;
+      return {
+        timestamp: timestamp - offset,
+        pauseTimestamp: null,
+      };
+    });
+  }
+
+  onReset(timestamp) {
+    this.setState({
+      timestamp,
+      pauseTimestamp: null,
+    });
+  }
+
+  isPaused() {
+    return !!this.state.pauseTimestamp;
   }
 
   render() {
@@ -34,31 +60,4 @@ export default class App extends React.Component {
     );
   }
 
-  onPause(timestamp) {
-    this.setState({
-      pauseTimestamp: timestamp
-    });
-  }
-
-  onContinue(timestamp) {
-    this.setState((prevState) => {
-      const offset = prevState.pauseTimestamp - prevState.timestamp;
-      return {
-        timestamp: timestamp - offset,
-        pauseTimestamp: null
-      }
-    });
-  }
-
-  onReset(timestamp) {
-    this.setState({
-      timestamp: timestamp,
-      pauseTimestamp: null
-    });
-  }
-
-  isPaused() {
-    return !!this.state.pauseTimestamp;
-  }
-
-};
+}

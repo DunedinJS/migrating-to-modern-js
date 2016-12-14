@@ -1,9 +1,9 @@
+/* eslint-env jest */
+
 import App from './';
 
 describe('App', () => {
-
   describe('isPaused', () => {
-
     it('returns true if state has a truthy pauseTimestamp', () => {
       const state = { pauseTimestamp: 1 };
       expect(App.prototype.isPaused.call({ state })).toBe(true);
@@ -13,11 +13,9 @@ describe('App', () => {
       const state = { pauseTimestamp: null };
       expect(App.prototype.isPaused.call({ state })).toBe(false);
     });
-
   });
 
   describe('onPause', () => {
-
     it('sets state pauseTimestamp to given timestamp', () => {
       const timestamp = 3000;
 
@@ -30,5 +28,4 @@ describe('App', () => {
       expect(arg).toEqual({ pauseTimestamp: timestamp });
     });
   });
-
 });
