@@ -37,6 +37,7 @@ Our starting application. Built on Backbone.js and state of the art from late 20
 
 #### [`07-syntax`](https://github.com/DunedinJS/migrating-to-modern-js/tree/07-syntax)
 
+* Add ESLint with Airbnb styleguide rules
 * Convert source code to modern syntax
 
 #### [`08-syntax`](https://github.com/DunedinJS/migrating-to-modern-js/tree/08-syntax)
