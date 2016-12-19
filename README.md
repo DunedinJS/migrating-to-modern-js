@@ -1,16 +1,13 @@
 _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
 
-# 03-modules
+# 04-sourcemaps
 
-* Separate all source code into ES6 modules
-
-  The single `app.js` is now split into multiple files within the [`source`](./source/) directory.
-  These use ES6 module import and export.
+* Configure sourcemaps in the Webpack configuration
 
 ## To run
 
 1. Clone this repository to your workstation
-1. Checkout the `03-modules` branch
+1. Checkout the `04-sourcemaps` branch
 1. Run `npm i` in the project directory &mdash; this installs dependencies
 
 #### Development server
@@ -27,16 +24,16 @@ This compiles and bundles the JavaScript source files into `dist/bundle.js`
 1. Run `npm run build`
 1. Open the `index.html` file directly in a web browser
 
-## Template files as modules
+## Sourcemaps
 
-_For example see [`source/controls/template.html`](./source/controls/template.html)
-and [`source/controls/View.js`](./source/controls/View.js)._
+Sourcemaps allow web browser debugging tools to relate executed code back to
+original source code.
+This is important because the code which is executed by a web browser may be
+compiled/transpiled, bundled, and minified &mdash; making it much less readable.
+By using sourcemaps it is possible to step step through or set breakpoints in
+the source files which are much easier to understand.
 
-Webpack allows non-JavaScript files to be loaded as modules.
-This is very convenient because it allows us to separate templates into their
-own files and load them into the view modules where needed.
+Sourcemaps can also be used for CSS which may be authored with a pre-processor
+such as Sass.
 
-[`raw-loader`](https://github.com/webpack/raw-loader) is used to load the
-contents of text files as strings in JavaScript.
-This is done at compile-time so the templates are included as strings in the
-application bundle and do not have to be requested separately.
+Webpack has built-in support for sourcemap generation with the `devtool` option.
