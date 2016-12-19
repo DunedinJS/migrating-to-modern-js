@@ -1,13 +1,22 @@
 _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
 
-# 04-sourcemaps
+# 05-versioning
 
-* Configure sourcemaps in the Webpack configuration
+* Configure Webpack to output bundle files with version names
+
+  Files output to the `dist` directory now have hashes appended to their filenames.
+
+* Configure Webpack to inject script tag into HTML file
+
+  `html-webpack-plugin` is used to automatically inject required tags for bundle
+  files into the HTML file.
+  [`index.html`](./source/index.html) is now in the `source` directory because
+  it is a template for the injection plugin.
 
 ## To run
 
 1. Clone this repository to your workstation
-1. Checkout the `04-sourcemaps` branch
+1. Checkout the `05-versioning` branch
 1. Run `npm i` in the project directory &mdash; this installs dependencies
 
 #### Development server
@@ -19,21 +28,28 @@ This runs the Webpack Dev Server which automatically recompiles when source file
 
 #### Build to files
 
-This compiles and bundles the JavaScript source files into `dist/bundle.js`
+This compiles and bundles the application into the `dist` directoy.
 
 1. Run `npm run build`
-1. Open the `index.html` file directly in a web browser
+1. Open the `dist/index.html` file directly in a web browser
 
-## Sourcemaps
+## Version hashes and long term caching
 
-Sourcemaps allow web browser debugging tools to relate executed code back to
-original source code.
-This is important because the code which is executed by a web browser may be
-compiled/transpiled, bundled, and minified &mdash; making it much less readable.
-By using sourcemaps it is possible to step step through or set breakpoints in
-the source files which are much easier to understand.
+By adding version hashes to file names it is possible to cache files for a very
+long time.
+For example `dist/bundle-f209f82ea3792f8e93df.js`
 
-Sourcemaps can also be used for CSS which may be authored with a pre-processor
-such as Sass.
+If the content of the file changes, its version hash differs and therefore the
+file name is different.
 
-Webpack has built-in support for sourcemap generation with the `devtool` option.
+This is a much more efficient strategy than for example bundling into a versioned
+directory such as `dist/v1/bundle.js` or appending version query params to the
+URL when requesting a file like `dist/bundle.js?v=1`.
+
+The difficult part is that URL paths for bundled files can no longer be manually
+written because they are not predictable .
+`html-webpack-plugin` handles this automatically by injecting tags with correct
+file names into HTML files.
+
+There are also options to generate manifest files which expose bundled file names
+if the HTML is to be generated dynamically on the server-side.
