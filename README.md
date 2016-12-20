@@ -11,9 +11,7 @@ A simple stopwatch application which serves as an example of how to migrate an o
 * Node.js version 6.9
 
   _Everything probably works with version 4 or higher but has not been checked._
-
   Run `node -v` to check your current version.
-
   [Follow the instructions here to install Node.js](https://github.com/DunedinJS/dunedin-modern-javascript/blob/master/topics/common/nodejs-install.md)
 
 * A text editor with first-class JavaScript support.
@@ -31,7 +29,7 @@ A simple stopwatch application which serves as an example of how to migrate an o
 1. `cd ./migrating-to-modern-js`
 
   _If using NVM to manage Node.js versions you can also run `nvm use` here to
-  make sure that the correct version is used._
+  make sure that the correct version is active._
 
 1. Checkout the `00-original` branch by running `git checkout 00-original`
 
