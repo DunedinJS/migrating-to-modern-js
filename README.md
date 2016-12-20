@@ -2,6 +2,42 @@
 
 A simple stopwatch application which serves as an example of how to migrate an old JavaScript application to modern syntax, features, and technologies.
 
+## What do I need?
+
+* Git
+
+* Git Bash &mdash; if using Windows (included with Git)
+
+* Node.js version 6.9
+
+  _Everything probably works with version 4 or higher but has not been checked._
+
+  Run `node -v` to check your current version.
+
+  [Follow the instructions here to install Node.js](https://github.com/DunedinJS/dunedin-modern-javascript/blob/master/topics/common/nodejs-install.md)
+
+* A text editor with first-class JavaScript support.
+
+  [Atom](https://atom.io/), [VSCode](https://code.visualstudio.com/), and
+[Sublime Text](https://www.sublimetext.com/) are best.
+
+* A modern web browser with good debugging tools such as Chrome, Firefox, or Edge.
+
+## Let's begin
+
+1. Clone this repository by running
+`git clone https://github.com/DunedinJS/migrating-to-modern-js.git`
+
+1. `cd ./migrating-to-modern-js`
+
+  _If using NVM to manage Node.js versions you can also run `nvm use` here to
+  make sure that the correct version is used._
+
+1. Checkout the `00-original` branch by running `git checkout 00-original`
+
+1. Make sure to view the readme file for each branch.
+These contain any further setup instructions and information about each stage.
+
 ### Each stage is stored in a different branch
 
 #### [`00-original`](https://github.com/DunedinJS/migrating-to-modern-js/tree/00-original)
@@ -33,7 +69,7 @@ Our starting application. Built on Backbone.js and state of the art from late 20
 
 #### [`06-unit-tests`](https://github.com/DunedinJS/migrating-to-modern-js/tree/06-unit-tests)
 
-* Configure Jest to test application logic
+* Configure Jest to test application logic and report code coverage
 
 #### [`07-syntax`](https://github.com/DunedinJS/migrating-to-modern-js/tree/07-syntax)
 
