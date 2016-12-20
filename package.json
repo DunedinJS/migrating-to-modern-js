@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --progress --inline",
     "build": "rm -rf ./dist; webpack --progress",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --config=./jest.coverage.config.json"
   },
   "repository": {
     "type": "git",
