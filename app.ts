@@ -1,6 +1,6 @@
-import $ from 'jquery';
-import _ from 'underscore';
-import Backbone from 'backbone';
+import * as $ from 'jquery';
+import * as _ from 'underscore';
+import * as Backbone from 'backbone';
 
 // Load the application when the DOM is ready
 $(function() {
@@ -13,11 +13,18 @@ $(function() {
   };
 
   // The main view for the application
-  var AppView = Backbone.View.extend({
+  class AppView extends Backbone.View<AppModel> {
+  
+    template: (data?: any) => string;
+    displayView: DisplayView;
+    controlsView: ControlsView;
 
-    template: templates.app,
+    constructor(options: any) {
+      super(options);
+      this.template = templates.app;
+    }
 
-    render: function() {
+    render() {
       // render the view template
       this.$el.html(this.template());
 
@@ -34,16 +41,23 @@ $(function() {
       // render child-views
       this.displayView.render();
       this.controlsView.render();
+
+      return this;
     }
 
-  });
+  }
 
   // A view which displays the elapsed time in seconds
-  var DisplayView = Backbone.View.extend({
+  class DisplayView extends Backbone.View<AppModel> {
 
-    template: templates.display,
+    template: (data: any) => string;
 
-    initialize: function() {
+    constructor(options: any) {
+      super(options);
+      this.template = templates.display;
+    }
+
+    initialize() {
       // save reference to the correct this context
       var self = this;
 
@@ -56,74 +70,86 @@ $(function() {
 
       // re-render on model change
       this.listenTo(this.model, 'change', this.render);
-    },
+    }
 
-    render: function() {
+    render() {
       this.$el.html(this.template({
         seconds: this.model.getSeconds()
       }));
+
+      return this;
     }
 
-  });
+  }
 
   // A view which manages the pause, continue, and reset buttons
-  var ControlsView = Backbone.View.extend({
+  class ControlsView extends Backbone.View<AppModel> {
 
-    template: templates.controls,
+    template: (data: any) => string;
 
-    events: {
-      'click .pause': 'onPause',
-      'click .continue': 'onContinue',
-      'click .reset': 'onReset'
-    },
+    constructor(options: any) {
+      super(options);
 
-    initialize: function() {
+      this.template = templates.controls;
+    }
+
+    events() {
+      return {
+        'click .pause': 'onPause',
+        'click .continue': 'onContinue',
+        'click .reset': 'onReset'
+      };
+    }
+
+    initialize() {
       // re-render on model change
       this.listenTo(this.model, 'change', this.render);
-    },
+    }
 
-    render: function() {
+    render() {
       this.$el.html(this.template({
         isPaused: this.model.isPaused()
       }));
-    },
 
-    onPause: function() {
+      return this;
+    }
+
+    onPause() {
       this.model.pause();
-    },
+    }
 
-    onContinue: function() {
+    onContinue() {
       this.model.continue();
-    },
+    }
 
-    onReset: function() {
+    onReset() {
       this.model.reset();
     }
 
-  });
+  }
 
   // A model which stores and manages application data
-  var AppModel = Backbone.Model.extend({
+  class AppModel extends Backbone.Model {
 
-    getSeconds: function() {
+    getSeconds() {
       var pauseTimestamp = this.get('pauseTimestamp');
       var offset = pauseTimestamp || Date.now();
       var timestamp = offset - this.get('timestamp');
 
       return Math.floor(timestamp / 1000);
-    },
+    }
 
-    isPaused: function() {
+    isPaused() {
       return !!this.get('pauseTimestamp');
-    },
+    }
 
-    pause: function() {
+    pause() {
       this.set({
         pauseTimestamp: Date.now()
       });
-    },
+    }
 
-    continue: function() {
+    continue() {
       var pauseTimestamp = this.get('pauseTimestamp');
       var offset = pauseTimestamp - this.get('timestamp');
 
@@ -131,16 +157,16 @@ $(function() {
         timestamp: Date.now() - offset,
         pauseTimestamp: null
       });
-    },
+    }
 
-    reset: function() {
+    reset() {
       this.set({
         timestamp: Date.now(),
         pauseTimestamp: null
       });
     }
 
-  });
+  }
 
   // create a model instance with the current timestamp
   var appModel = new AppModel({
