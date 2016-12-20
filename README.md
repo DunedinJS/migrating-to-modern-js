@@ -36,6 +36,13 @@ A simple stopwatch application which serves as an example of how to migrate an o
 1. Make sure to view the readme file for each branch.
 These contain any further setup instructions and information about each stage.
 
+1. Explore the code.
+
+  Make changes if you'd like. To discard changes before checking out another
+  branch run `git reset --hard HEAD`.
+
+1. Checkout the next branch and continue.
+
 ### Each stage is stored in a different branch
 
 #### [`00-original`](https://github.com/DunedinJS/migrating-to-modern-js/tree/00-original)
