@@ -1,6 +1,6 @@
 module.exports = {
 
-  entry: './app.js',
+  entry: './app.ts',
 
   output: {
     path: './dist', // the directory to output bundled files to
@@ -11,12 +11,8 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015'],
-        },
+        test: /\.ts?$/,
+        loader: 'ts-loader',
       },
     ],
   },
