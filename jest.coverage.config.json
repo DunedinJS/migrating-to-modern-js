@@ -1,6 +1,6 @@
 {
   "collectCoverage": true,
   "collectCoverageFrom": [
-    "source/**/*.js"
+    "source/**/*.{js,jsx}"
   ]
 }
