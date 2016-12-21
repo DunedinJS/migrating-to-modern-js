@@ -1,11 +1,11 @@
 _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
 
-# 10-react
+# 11-react
 
 ## To run
 
 1. Clone this repository to your workstation
-1. Checkout the `10-react` branch
+1. Checkout the `11-react` branch
 1. Run `npm i` in the project directory &mdash; this installs dependencies
 
 #### Development server
