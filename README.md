@@ -31,7 +31,7 @@ This compiles and bundles the application into the `dist` directoy.
 1. Run `npm run build`
 1. Open the `dist/index.html` file directly in a web browser
 
-#### Run tests
+## To test
 
 * `npm test` to run tests once.
 
