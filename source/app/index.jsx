@@ -1,6 +1,5 @@
 import React from 'react';
 import Display from '../display';
-import Controls from '../controls';
 
 // The main view for the application
 export default class App extends React.Component {
@@ -43,6 +42,10 @@ export default class App extends React.Component {
   render() {
     const isPaused = this.isPaused();
 
+    const playButton = isPaused ?
+      <button onClick={() => this.onContinue(Date.now())}>Continue</button> :
+      <button onClick={() => this.onPause(Date.now())}>Pause</button>;
+
     return (
       <div>
         <Display
@@ -50,12 +53,10 @@ export default class App extends React.Component {
           pauseTimestamp={this.state.pauseTimestamp}
           isPaused={isPaused}
         />
-        <Controls
-          isPaused={isPaused}
-          onPause={() => this.onPause(Date.now())}
-          onContinue={() => this.onContinue(Date.now())}
-          onReset={() => this.onReset(Date.now())}
-        />
+        <div className="controls">
+          { playButton }
+          <button onClick={() => this.onReset(Date.now())}>Reset</button>
+        </div>
       </div>
     );
   }

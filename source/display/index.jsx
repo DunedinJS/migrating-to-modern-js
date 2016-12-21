@@ -5,9 +5,8 @@ import { secondsDifference } from './util';
 export default class Display extends React.Component {
 
   componentDidMount() {
-    // refresh state second (1000 milliseconds)
-    // setting the state triggers a re-render by default
-    this.timerID = setInterval(() => this.setState(), 1000);
+    // re-render every second (1000 milliseconds)
+    this.timerID = setInterval(() => this.forceUpdate(), 1000);
   }
 
   componentWillUnmount() {
