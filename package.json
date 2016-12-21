@@ -4,9 +4,12 @@
   "description": "An example stopwatch application",
   "main": "app.js",
   "scripts": {
+    "preinstall": "npm prune",
     "start": "webpack-dev-server --progress --inline",
     "build": "rm -rf ./dist; webpack --progress",
     "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --config=./jest.coverage.config.json",
     "lint": "eslint . --ext .js,.jsx"
   },
   "repository": {
