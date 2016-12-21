@@ -32,6 +32,6 @@ This compiles and bundles the application into the `dist` directoy.
 An HTML report is generated which can be viewed in a web browser at
 `coverage/lcov-report/index.html`.
 
-## Lint
+## To lint
 
 `npm run lint`
