@@ -99,3 +99,11 @@ Our starting application. Built on Backbone.js and state of the art from late 20
 
 * Convert state management from Backbone Model to React state
 * Revise tests to cover new logic implementation
+
+#### `12-environments` &mdash; coming soon
+
+* Configure different build environments for development and production
+
+#### `13-optimisation` &mdash; coming soon
+
+* Configure code optimisation for production builds
