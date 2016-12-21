@@ -1,20 +1,21 @@
 _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
 
-# 06-unit-tests
+# 07-syntax
 
-* Add Jest and configure for tests and code coverage
+* Add ESLint with Airbnb styleguide rules
 
-  See new `test`, `test:watch`, and `test:coverage` tasks added in the `scripts`
-  section of [`package.json`](./package.json)
+  See [`.eslintrc.js`](./.eslintrc.js) which defines code style rules for
+  JavaScript files outside the `source` directory.
 
-* Add unit tests for application logic
+  See [`source/.eslintrc.js`](./source/.eslintrc.js) which defines code style
+  rules for JavaScript files inside the `source` directory.
 
-  For example see [`source/app/Model.spec.js`](./source/app/Model.spec.js)
+* Convert source code to modern syntax
 
 ## To run
 
 1. Clone this repository to your workstation
-1. Checkout the `06-unit-tests` branch
+1. Checkout the `07-syntax` branch
 1. Run `npm i` in the project directory &mdash; this installs dependencies
 
 #### Development server
@@ -31,7 +32,7 @@ This compiles and bundles the application into the `dist` directoy.
 1. Run `npm run build`
 1. Open the `dist/index.html` file directly in a web browser
 
-#### Run tests
+##### Run tests
 
 * `npm test` to run tests once.
 
@@ -41,31 +42,36 @@ This compiles and bundles the application into the `dist` directoy.
 An HTML report is generated which can be viewed in a web browser at
 `coverage/lcov-report/index.html`.
 
-## Jest
+## Lint
 
-[Jest](https://facebook.github.io/jest/) is a JavaScript testing framework which
-is fast, easy to setup, and has powerful features such as code coverage and mocking.
-It is simple to setup because it has very sensible defaults which usually means
-that little configuration is required.
+`npm run lint`
 
-Jest has a "watch" mode which analyses module dependencies and is smart enough
-to determine which tests need to be re-tested when source or test spec files change.
-A lot of time can be saved by only re-testing the relevant tests.
-By providing such quick feedback it also promotes a
-[test-first methodology](http://www.extremeprogramming.org/rules/testfirst.html).
+## ESLint
 
-Most JavaScript testing frameworks follow very similar conventions so it is easy
-to also understand [Jasmine](https://jasmine.github.io/) and [Mocha](https://mochajs.org/)
-test specs.
+[ESLint](http://eslint.org/) is the de-facto standard for JavaScript code linting.
+It is highly configurable through an extensive set of build-in rules and can be
+extended with plugins.
 
-## Jest with Babel
+The `npm run lint` task has been configured and ESLint is also integrated with
+the Webpack build task so issues will display in the console.
 
-Files need to be compiled by Babel before Jest can test them.
-The `babel-jest` package is added to enable this.
+## Airbnb JavaScript Style Guide
 
-## Jest code coverage
+The [Airbnb JaavaScript Style Guide](https://github.com/airbnb/javascript) is
+currently the most popular style guide for JavaScript.
+The rules help to reduce error-prone code, improve consistency and readability,
+and keep up with best practices for modern syntax.
+It is worth browsing through the guide.
 
-Jest uses the [Istanbul](https://github.com/gotwarlost/istanbul) code coverage
-tool internally.
-This analyses source code to determine which parts are covered by tests and
-outputs coverage reports.
+ESLint has been configured with the `eslint-config-airbnb` package to enforce
+the style guide rules.
+
+#### In-editor linting
+
+It is very helpful to have in-editor linting which shows issues as you type code.
+
+[linter-eslint](https://atom.io/packages/linter-eslint) for Atom
+
+[vscode-eslint](https://github.com/Microsoft/vscode-eslint) for VSCode
+
+[SublimeLinter-eslint](https://github.com/roadhump/SublimeLinter-eslint) for Sublime Text
