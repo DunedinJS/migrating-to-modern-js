@@ -4,6 +4,7 @@
   "description": "An example stopwatch application",
   "main": "app.js",
   "scripts": {
+    "preinstall": "npm prune",
     "start": "webpack-dev-server --progress --inline",
     "build": "rm -rf ./dist; webpack --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
