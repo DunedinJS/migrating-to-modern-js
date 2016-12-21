@@ -2,6 +2,8 @@
 
 A simple stopwatch application which serves as an example of how to migrate an old JavaScript application to modern syntax, features, and technologies.
 
+__There is also a TypeScript fork of this project https://github.com/DunedinJS/migrating-to-modern-js-typescript.__
+
 ## What do I need?
 
 * Git
